@@ -1,8 +1,6 @@
 name: Despliegue aplicación en javascript
 
-on:
-  push:
-    branches: [ "master" ]
+on: push
 
 jobs:
   build:
