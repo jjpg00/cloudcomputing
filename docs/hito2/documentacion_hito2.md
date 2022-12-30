@@ -49,7 +49,7 @@ test("Club creado", () => {
 por último los ejecutamos con npm test
 ```
 
-![test realizados](../../imagenes/test.png)
+![test realizados](../../imagenes/tests.png)
 
 ###  Correcta relación entre avance de código (incluyendo los tests) e HUs, incluyendo testeo de algunos aspectos de la lógica de negocio.
 ---

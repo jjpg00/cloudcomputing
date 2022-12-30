@@ -2,6 +2,8 @@
 
 ![Footballerstats](./imagenes/footballerstats.png)
 
+### ¡¡¡Se ha cambiado el lenguaje del proyecto y se ha empezado desde 0, el antiguo repositorio se llamaba FootballerStats ahora se llamará cloudcomputing!!! Se ha pasado de usar java a javascript
+
 ## Introducción
 FootballerStats es una aplicación pensada para cloud computing para la obtención de datos de futbolistas y su almacenamiento usando servidores en la nube, donde se procesarán en otros equipo aparte para trabajar con los datos y determinar valoraciones a partir de los datos.
 
@@ -24,4 +26,3 @@ La documentación sobre este hito la encontramos en este [directorio](./docs/hit
 1. [Documentación](./docs/hito2/documentacion_hito2.md) Aquí encontraremos la documentación del hito correspondiente..
 2. [Tests JavaScript](./src/test.js) Aquí encontraremos las clases .java que compondrán el proyecto provisionalmente.
 
-Se ha añadido el archivo Makefile
