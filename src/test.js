@@ -53,7 +53,7 @@ test("Integración en la aplicación", () => {
   aplicacion.newClub(barcelona);
   aplicacion.newUsuario(usuarioejemplo);
 
-  expect(aplicacion.numberOfFutbolistas).toBe(1);
+  expect(aplicacion.numberOfFutbolistas).toBe(2);
   expect(aplicacion.numberOfClubs).toBe(3);
   expect(aplicacion.numberOfUsuarios).toBe(1);
 
