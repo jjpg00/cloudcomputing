@@ -1,8 +1,5 @@
 name: Publish Docker image to docker hub
-on:
-  push:
-    tags:
-      - v*
+on: push
 
 jobs:
   push_to_registry:
