@@ -109,6 +109,8 @@ y para hacer el registro cogeremos nuestro usuario y un token para logearnos.
  
  Y aquí podemos comprobar el resultado:
  ![Cloud computing sha](../../imagenes/cloudcomputingsha.png)
+ 
+ Para la automatización en Github, se ha creado un archivo llamado deploy-imageDocker.yml. Para su funcionamiento se han creado dos variables DOCKER_USERNAME y DOCKER_PASSWORD Para su funcionamiento. Esto se encuentra en Settings del proyecto-> Security -> Secrets y finalmente las añadimos.
 ### Uso de registros alternativos y públicos de contenedores (como GitHub Container Registry)
  La opción elegida ha sido GitHub Container Registry ya que estamos utilizando Github para el control del proyecto y es muy fácil y rápido de crearlo ya que únicamente hay que configurar el archivo .yml de forma correcta dentor de .github/workflows.
  Github Container Registry puede almacenar y administrar imágenes Docker y OCI en el registro de contenedores, que utiliza el espacio de nombres del paquete https://ghcr.io, especificado en nuestro archivo .yml. El archivo se puede crear manualmente o a través de la sección actions dentro de nuestro repositorio de Github.
