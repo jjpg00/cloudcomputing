@@ -105,6 +105,7 @@ y para hacer el registro cogeremos nuestro usuario y un token para logearnos.
  
  Para la automatización haremos unos tags basados en la rama en la que estemos y luego también añadiremos el tipo sha para que se distingan uno de otros inequívocamente.
  Aquí podemos ver el código añadido:
+ 
  ![Tags](../../imagenes/tags.png)
  
  Y aquí podemos comprobar el resultado:
