@@ -23,10 +23,10 @@ La documentación sobre este hito la encontramos en este [directorio](./docs/hit
 ## Hito2
 La documentación sobre este hito la encontramos en este [directorio](./docs/hito2)
 
-1. [Documentación](./docs/hito2/documentacion_hito2.md) Aquí encontraremos la documentación del hito correspondiente..
+1. [Documentación](./docs/hito2/documentacion_hito2.md) Aquí encontraremos la documentación del hito correspondiente.
 2. [Tests JavaScript](./src/test.js) Aquí encontraremos las clases .java que compondrán el proyecto provisionalmente.
 
 ## Hito3
 La documentación sobre este hito la encontramos en este [directorio](./docs/hito3)
 
-1. [Documentación](./docs/hito3/documentacion_hito3.md) Aquí encontraremos la documentación del hito correspondiente..
+1. [Documentación](./docs/hito3/documentacion_hito3.md) Aquí encontraremos la documentación del hito correspondiente.
