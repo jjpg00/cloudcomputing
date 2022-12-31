@@ -128,5 +128,7 @@ Aquí comprobamos que funciona correctamente dentro de las pipelines del proyect
 
 ### Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI.
 Como se ha comentado en el apartado de Github Actions, hemos aprovechado el docker para la ejecución de los tests. El archivo se llama *integracionDocker.yml* en la carpeta .github/workflows.
+![Tests en github actions 2](../../imagenes/tests2.png)
+
 
 Como solo se pide en alguno de los sistemas, damos por finalizado este apartado.
