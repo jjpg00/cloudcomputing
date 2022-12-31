@@ -30,3 +30,8 @@ La documentación sobre este hito la encontramos en este [directorio](./docs/hit
 La documentación sobre este hito la encontramos en este [directorio](./docs/hito3)
 
 1. [Documentación](./docs/hito3/documentacion_hito3.md) Aquí encontraremos la documentación del hito correspondiente.
+
+## Hito4
+La documentación sobre este hito la encontramos en este [directorio](./docs/hito4)
+
+1. [Documentación](./docs/hito4/documentacion_hito4.md) Aquí encontraremos la documentación del hito correspondiente.

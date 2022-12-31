@@ -1,0 +1,14 @@
+name: CI Test using Docker image
+
+on: push
+
+
+jobs:
+
+  container-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+       - uses: actions/checkout@v3
+       - run:  docker run -t -v `pwd`:/app/test jjpg00/cloudcomputing
