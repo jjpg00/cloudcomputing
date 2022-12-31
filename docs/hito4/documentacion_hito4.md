@@ -51,7 +51,10 @@ Si fuera un proyecto más complejo, podríamos escoger un sistema que repartiera
 Con Github actions podremos hacer testing del código fuente que se sube al proyecto de forma simple y automática para avisar si ha pasado todas las condiciones de nuestro archivo de tests en el propio repositorio.
 Además es muy adecuado ya que ofrece herramientas para hacer la integración fácilmente en contenedores.
 
-El segundo sistema elegido por razones de familiaridad, facilidad y rápidez se ha elegido usar Circle CI.
+El segundo sistema elegido por razones rapidez y facilidad es CicleCI ya que permite una fácil integración con Github ya que nos permite registrarnos automáticamente en él con la cuenta Github y tras esto nos crea automáticamente el fichero necesario para la integración.
+Es idóneo para este proyecto y además podemos probar como es ejecutar los tests en una plataformas de terceros. También es interesante ya que permite hacer ejecuciones en paralelo para ahorrar tiempo, he querido probar esta herramienta ya que en un futuro en un proyecto real se podría usar ya que es buena para proyectos grandes.
+
+En definitiva al ser nuestro proyecto pequeño se han tomado las opciones más sencillas, rápidas y familiares para probarlas y aprender de estas.
 
 ### Github Actions
 
@@ -110,3 +113,20 @@ Aquí vemos que los tests se ejecutan en Github actions correctamente.
 
 Ahora vemos la ejecución dentro del docker.
 ![Tests en github actions 2](../../imagenes/tests2.png)
+
+### Configuración de algún sistema de integración continua adicional
+Como se ha comentado y justificado antes se usará CircleCI
+
+Tras registrarnos con nuestra cuenta Github, únicamente hay que elegir el proyecto que queremos integrar y ellos nos crearán automáticamente el archivo y la carpeta para permitir la integración continua.
+El archivo se encuentra dentro de la carpeta .circleci/ en el archivo config.yml.
+
+Aquí vemos como tras un sencillo pull request, nos crea el archivo necesario para la integración.
+![Tests en github Circle CI](../../imagenes/circle ci.png)
+
+Aquí comprobamos que funciona correctamente dentro de las pipelines del proyecto: https://app.circleci.com/pipelines/github/jjpg00/cloudcomputing
+![Tests en github Circle CI](../../imagenes/test2.png)
+
+### Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI.
+Como se ha comentado en el apartado de Github Actions, hemos aprovechado el docker para la ejecución de los tests. El archivo se llama *integracionDocker.yml* en la carpeta .github/workflows.
+
+Como solo se pide en alguno de los sistemas, damos por finalizado este apartado.
