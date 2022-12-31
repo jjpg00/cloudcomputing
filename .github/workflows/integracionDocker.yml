@@ -1,4 +1,4 @@
-name: CI Test using Docker image
+name: Tests usando el contenedor
 
 on: push
 
