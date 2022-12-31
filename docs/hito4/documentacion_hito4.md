@@ -3,7 +3,7 @@
 En primer lugares haremos una comparación de los sistemas de integración continua para saber cual es la más adecuada a nuestro proyecto.
 Para esto veremos las características y ventajas que ofrece cada uno de estos.
 
-1. Puede crear, compartir, reutilizar y bifurcar sus prácticas de desarrollo de software.
+1. **Github Actions**: Puede crear, compartir, reutilizar y bifurcar sus prácticas de desarrollo de software.
 Está completamente integrado con GitHub, lo que lo hace manejable desde un solo lugar.
 Puede realizar pruebas de varios contenedores agregando soporte para Docker.
 Puede elegir entre varias plantillas de CI o incluso crear las suyas propias.
@@ -12,7 +12,7 @@ Las actualizaciones frecuentes de código también facilitan la combinación de 
 GitHub ejecuta sus pruebas de CI y proporciona los resultados de cada prueba en la solicitud de extracción, para que pueda ver si el cambio en su rama introduce un error.
 Cuando configura CI en su repositorio, GitHub analiza el código en su repositorio y recomienda flujos de trabajo de CI basados ​​en el lenguaje y el marco en su repositorio. Por ejemplo, si usa Node.js , GitHub le sugerirá un flujo de trabajo de inicio que instala sus paquetes de Node.js y ejecuta sus pruebas.
 
-2. Cicle CI: Es fácil de configurar y se puede usar con sistemas populares de control de versiones como GitHub, Bitbucket y más.
+2. **Cicle CI**: Es fácil de configurar y se puede usar con sistemas populares de control de versiones como GitHub, Bitbucket y más.
 Ofrece canalizaciones de CI/CD como 'Flujos de trabajo'.
 Es compatible con la mayoría de los lenguajes de programación populares listos para usar.
 Para reducir el tiempo de compilación, las compilaciones se pueden dividir y equilibrar en varios contenedores.
@@ -22,7 +22,7 @@ CircleCI Server, que es la oferta local de CircleCI, se puede integrar con herra
 CircleCI Server admite plataformas en la nube ampliamente utilizadas como AWS, Google Cloud, Azure y más.
 CircleCI Orbs, que son fragmentos de código reutilizables, ayudan a automatizar procesos repetitivos y aceleran la integración con herramientas de terceros.
 
-3. Travis CI: Travis CI admite una variedad de lenguajes de programación (es decir, un total de 30), incluidos Java, C #, Julia, Python y más.
+3. **Travis CI**: Travis CI admite una variedad de lenguajes de programación (es decir, un total de 30), incluidos Java, C #, Julia, Python y más.
 Las empresas que buscan más privacidad y soluciones seguras pueden optar por Travis CI Enterprise, una herramienta autohospedada que se integra a la perfección con GitHub y Bitbucket.
 Las canalizaciones de CI/CD utilizan una sintaxis YAML patentada, con una integración perfecta con las herramientas de GitHub Enterprise.
 Puede usar la variante Cloud (o SaaS) de Travis CI para proyectos de código abierto y empresas con equipos pequeños.
@@ -31,7 +31,7 @@ La función de matriz de compilación en Travis CI le permite realizar compilaci
 Travis CI Enterprise admite la integración con plataformas en la nube populares como AWS, Google Cloud, Kubernetes, Azure y más.
 La integración con herramientas de prueba de navegador cruzado como LambdaTest ayuda a realizar pruebas en diferentes navegadores, plataformas y dispositivos (emuladores).
 
-4. Drone CI: Las canalizaciones se ejecutan en contenedores Docker aislados, lo que garantiza que las compilaciones no entren en conflicto.
+4. **Drone CI**: Las canalizaciones se ejecutan en contenedores Docker aislados, lo que garantiza que las compilaciones no entren en conflicto.
 Drone CI (Cloud and Enterprise) puede integrarse perfectamente con herramientas SCM populares como GitHub, Bitbucket y GitLab.
 Drone CI puede funcionar con cualquier lenguaje de programación, base de datos o servicio para ejecutarse dentro de un contenedor Docker.
 Admite la compilación y las pruebas en paralelo, incluidas las pruebas entre navegadores a través de la integración con LambdaTest.
@@ -39,17 +39,17 @@ Drone CI se puede instalar en cuestión de minutos, ya que solo requiere descarg
 Drone Cloud es completamente gratuito para proyectos de código abierto.
 Drone CI (Cloud and Enterprise) tiene un ecosistema de complementos en crecimiento donde puede encontrar complementos para la integración en la nube, informes, pruebas, notificaciones y más.
 
-5. Jenkins: Con esta herramienta los desarrolladores pueden detectar y solucionar problemas de integración, mucho más fácil y de forma constante, evitando estar a ultima hora teniendo problemas sin lograr ver en que parte del código está el error.
+5. **Jenkins**: Con esta herramienta los desarrolladores pueden detectar y solucionar problemas de integración, mucho más fácil y de forma constante, evitando estar a ultima hora teniendo problemas sin lograr ver en que parte del código está el error.
 Jenkins se puede usar como un simple servidor de CI o se puede convertir en el centro de entrega continua para cualquier proyecto.
 Jenkins está basado en Java, listo para ejecutarse, con paquetes para Windows, Mac OS X y otros sistemas operativos tipo Unix.
 Se puede configurar fácilmente a través de su interfaz web, que incluye verificaciones de errores
 Jenkins se integra con prácticamente todas las herramientas en la integración continua
 
-Justificación: Todos los distintos sistemas de integración continua ofrecen una gran cantidad de ventajas y es muy difícil decantanse por uno. 
+**Justificación**: Todos los distintos sistemas de integración continua ofrecen una gran cantidad de ventajas y es muy difícil decantanse por uno. 
 Para este proyecto, debido a que es un sistema simple se ha optado por Github actions ya que es el más fácil y rápido de implementar por el entorno en el que se está desarrollando y familiaridad de uso con él.
 Si fuera un proyecto más complejo, podríamos escoger un sistema que repartiera la carga de trabajo que supone la integración continua en más de una plataforma, pero en este caso, con Github actions es suficiente.
-
-Con Github actions podremos hacer testing del código fuente que se sube al proyecto de forma simple y automática para avisar si ha pasado todas las condiciones de nuestro archivo de tests.
+Con Github actions podremos hacer testing del código fuente que se sube al proyecto de forma simple y automática para avisar si ha pasado todas las condiciones de nuestro archivo de tests en el propio repositorio.
+Además es muy adecuado ya que ofrece herramientas para hacer la integración fácilmente en contenedores.
 
 El segundo sistema elegido por razones de familiaridad, facilidad y rápidez se ha elegido usar Circle CI.
 
@@ -104,97 +104,9 @@ El archivo para ejecutarlo en el contenedor será muy similar únicamente hay qu
 
 ```
 Para más información consultar el siguiente vídeo: https://www.youtube.com/watch?v=azzRDem_p5k.
-### Dockerfile correcto, siguiendo buenas prácticas, y adaptado de forma correcta a las clases o módulos que se están testeando
 
-En primer lugar eligiremos el contenedor a usar y la versión que queremos usar, siendo en este caso la versión 19 alpine de node como se ha comentado en el apartado anterior.
-```
-FROM node:19-alpine
-```
+Aquí vemos que los tests se ejecutan en Github actions correctamente.
+![Tests en github actions](../../imagenes/tests1.png)
 
-Necesitamos cual será nuestro directorio de trabajo que en este caso diremos que se encontrará en una carpeta /app
-```
-WORKDIR /app
-```
-
-Primero necesitamos copiar los archivos package.json y package-lock.json la razón de porque hay que empezar por estos dos archivos es porque en package json se encuentran unas dependencias a nivel de aplicación que necesita Node para funcionar ya que docker solo nos ofrece unas dependencias a nivel de sistema.
-En el primer argumento especificamos que nos copie los dos archivos que empiecen por package y acaben en .json y en el segundo argumento el directorio de trabajo.
-```
-COPY package*.json ./
-```
-
-El siguiente paso es usar el npm install para que nos instale las dependencias. Tras esto conseguiremos la carpeta node-modules dentro del container y ya puede ejecutar el código al existir las dependencias necesarias.
-```
-npm install
-```
-
-Luego tendremos que copiar todo nuestro código javascript dentro del contenedor. 
-```
-COPY . .
-```
-
-Cuidado, como copiaremos todo el contenido de la carpeta dentro y especificaremos en un archivo .dockerignore las carpetas que no queramos copiar ya que estamos copiando todo al usar ".".
-Quedando nuestro archivo .dockerignore de la siguiente manera: (ignoraremos el log del debugger y la carpeta de las depedencias)
-Nota se hizo la imagen cuando solo había archivos del proyecto y no habia documentación etc..
-```
-node_modules
-npm-debug.log
-```
-
-Ahora daremos un puerto por el que poder acceder a la aplicación a través del contenedor.
-```
-EXPOSE 6000
-```
-
-Ahora con el comando CMD pasaremos el comando que queremos ejecutar junto a sus argumentos, en este caso al querer ejecutar los tests sería de la siguiente forma:
-```
-CMD ["npm" , "test"]
-```
-
-Luego para construir el contenedor y ejecutarlo solo tenemos que usar los siguientes comandos.
-
-```
-docker build -t jjpg00/cloudcomputing .
-docker run -t -v `pwd`:/app/test jjpg00/cloudcomputing
-```
-
-![Contenedor creado](../../imagenes/todobien.png)
-
-### Contenedor subido correctamente a Docker Hub y documentación de la actualización automática
-https://hub.docker.com/repository/docker/jjpg00/cloudcomputing
-Tras el siguiente comando, comprobamos que lo hemos subido correctamente.
-```
- docker push jjpg00/cloudcomputing
-```
-![Comprobacion](../../imagenes/cc.png)
-
-Para conseguirlo se ha hecho uso de la herramienta actions que nos ofrece Github. Para ello tendremos que configurar un archivo .yml dentro de las carpetas .github/workflows.
-El nombre del archivo será deploy-image.yml.
-
-En el todos los parámetros los recogerá a través de variables, por ejemplo el nombre de la imagen será el nombre del repositorio de github.
-
-```
-IMAGE_NAME: ${{ github.repository }}
-```
-y para hacer el registro cogeremos nuestro usuario y un token para logearnos.
-```
-      username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
- ```
- 
- Para la automatización haremos unos tags basados en la rama en la que estemos y luego también añadiremos el tipo sha para que se distingan uno de otros inequívocamente.
- Aquí podemos ver el código añadido, podemos ver la de docker y la de github:
- 
- ![Dockerhub imagen](../../imagenes/main.png)
- ![Tags](../../imagenes/tags.png)
- 
- Y aquí podemos comprobar el resultado:
- ![Cloud computing sha](../../imagenes/cloudcomputingsha.png)
- 
- Para la automatización en Github, se ha creado un archivo llamado deploy-imageDocker.yml. Para su funcionamiento se han creado dos variables DOCKER_USERNAME y DOCKER_PASSWORD Para su funcionamiento. Esto se encuentra en Settings del proyecto-> Security -> Secrets y finalmente las añadimos.
-### Uso de registros alternativos y públicos de contenedores (como GitHub Container Registry)
- La opción elegida ha sido GitHub Container Registry ya que estamos utilizando Github para el control del proyecto y es muy fácil y rápido de crearlo ya que únicamente hay que configurar el archivo .yml de forma correcta dentor de .github/workflows.
- Github Container Registry puede almacenar y administrar imágenes Docker y OCI en el registro de contenedores, que utiliza el espacio de nombres del paquete https://ghcr.io, especificado en nuestro archivo .yml. El archivo se puede crear manualmente o a través de la sección actions dentro de nuestro repositorio de Github.
- 
- Tras ejecutar la action y acabar correctamente, podemos observar que nuestra imagen aparece en el repositorio:
- 
- ![Contenedor](../../imagenes/contenedor.png)
+Ahora vemos la ejecución dentro del docker.
+![Tests en github actions 2](../../imagenes/tests2.png)
