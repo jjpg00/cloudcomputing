@@ -126,6 +126,19 @@ Aquí vemos como tras un sencillo pull request, nos crea el archivo necesario pa
 Aquí comprobamos que funciona correctamente dentro de las pipelines del proyecto: https://app.circleci.com/pipelines/github/jjpg00/cloudcomputing
 ![Tests en github Circle CI](../../imagenes/test2.png)
 
+
+###  Uso correcto del gestor de tareas y otras buenas prácticas en todos los casos anteriores
+El gestor de tareas está bien configurado para que al ejecutar la sentencia correcta haga nada más que los comandos necesarios para la funcionalidad deseada.
+
+Respecto a las buenas prácticas:
+Usamos la llamada matrix para probar diferentes combinaciones del lenguaje que Node.
+```
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x,18.x, 19.x]
+```
+Usamos contenedores para acelerar los tests, metiendo en ellos todos los módulos que se instalarían durante el test, como se ha explicado previamente.
+Aprovecha diferentes sistemas de integración continua para ejecutar tests diferentes. También lo hacemos ya que en CI, en el docker y en github ejecutamos distintas versiones del lenguaje. 
 ### Aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI.
 Como se ha comentado en el apartado de Github Actions, hemos aprovechado el docker para la ejecución de los tests. El archivo se llama *integracionDocker.yml* en la carpeta .github/workflows.
 ![Tests en github actions 2](../../imagenes/tests2.png)

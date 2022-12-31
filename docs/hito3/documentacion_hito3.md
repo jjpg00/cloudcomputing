@@ -28,6 +28,8 @@ La versión alpine fue la más liviana y además funcionaba a la perfección, po
 
 ### Dockerfile correcto, siguiendo buenas prácticas, y adaptado de forma correcta a las clases o módulos que se están testeando
 
+Nuestro dockerfile al ser sencillo no se pueden apreciar el uso de buenas prácticas especificadas en : https://github.com/FuriKuri/docker-best-practices, pero está hecho de forma eficiente ignorando los archivos no necesarios con el archivo .gitignore y no metiendo sentencias ineficientes.
+
 En primer lugar eligiremos el contenedor a usar y la versión que queremos usar, siendo en este caso la versión 19 alpine de node como se ha comentado en el apartado anterior.
 ```
 FROM node:19-alpine
@@ -89,7 +91,7 @@ Tras el siguiente comando, comprobamos que lo hemos subido correctamente.
 ```
 ![Comprobacion](../../imagenes/cc.png)
 
-Para conseguirlo se ha hecho uso de la herramienta actions que nos ofrece Github. Para ello tendremos que configurar un archivo .yml dentro de las carpetas .github/workflows.
+Para conseguir la actualización automática se ha hecho uso de la herramienta actions que nos ofrece Github. Para ello tendremos que configurar un archivo .yml dentro de las carpetas .github/workflows.
 El nombre del archivo será deploy-image.yml.
 
 En el todos los parámetros los recogerá a través de variables, por ejemplo el nombre de la imagen será el nombre del repositorio de github.
@@ -103,16 +105,20 @@ y para hacer el registro cogeremos nuestro usuario y un token para logearnos.
           password: ${{ secrets.GITHUB_TOKEN }}
  ```
  
- Para la automatización haremos unos tags basados en la rama en la que estemos y luego también añadiremos el tipo sha para que se distingan uno de otros inequívocamente.
- Aquí podemos ver el código añadido, podemos ver la de docker y la de github:
+ Para la automatización en Github añadiremos el tipo sha para que se distingan uno de otros inequívocamente.
+  ![Tags](../../imagenes/tags.png)
  
+  
+ Aquí podemos ver la actualización automática en Github
  ![Dockerhub imagen](../../imagenes/main.png)
- ![Tags](../../imagenes/tags.png)
- 
- Y aquí podemos comprobar el resultado:
+
+
+ Para la automatización en Docker, se ha creado un archivo llamado deploy-imageDocker.yml. Para su funcionamiento se han creado dos variables DOCKER_USERNAME y DOCKER_PASSWORD Para su funcionamiento ya que necesitamos las credenciales que usamos en la página de docker. Esto se encuentra en Settings del proyecto-> Security -> Secrets y finalmente las añadimos.
+
+ Una vez creada las variables secretas y configurado correctamente el archivo deploy-imageDocker.yml aquí podemos comprobar el resultado que funciona correctamente:
  ![Cloud computing sha](../../imagenes/cloudcomputingsha.png)
  
- Para la automatización en Github, se ha creado un archivo llamado deploy-imageDocker.yml. Para su funcionamiento se han creado dos variables DOCKER_USERNAME y DOCKER_PASSWORD Para su funcionamiento. Esto se encuentra en Settings del proyecto-> Security -> Secrets y finalmente las añadimos.
+ 
 ### Uso de registros alternativos y públicos de contenedores (como GitHub Container Registry)
  La opción elegida ha sido GitHub Container Registry ya que estamos utilizando Github para el control del proyecto y es muy fácil y rápido de crearlo ya que únicamente hay que configurar el archivo .yml de forma correcta dentor de .github/workflows.
  Github Container Registry puede almacenar y administrar imágenes Docker y OCI en el registro de contenedores, que utiliza el espacio de nombres del paquete https://ghcr.io, especificado en nuestro archivo .yml. El archivo se puede crear manualmente o a través de la sección actions dentro de nuestro repositorio de Github.
