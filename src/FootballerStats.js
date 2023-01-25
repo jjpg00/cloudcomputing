@@ -145,6 +145,10 @@ findAceleracionFutbolista(parametro) {
     return this.usuarios
   }
 
+allUsuarios2(){
+  return this.usuarios
+}
+
   get numberOfUsuarios() {
     return this.usuarios.length
   }
