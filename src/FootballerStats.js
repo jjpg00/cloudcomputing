@@ -29,6 +29,26 @@ class FootballerStats {
   return result;
 }
 
+deleteFutbolista(parametro){
+  var result = this.futbolistas.filter(item => item.ID != parametro);
+  this.futbolistas=result;
+  return result;
+}
+
+deleteClub(parametro){
+  var result = this.clubs.filter(item => item.identificador != parametro);
+  this.clubs=result;
+  return result;
+}
+
+deleteUsuario(parametro){
+  var result = this.clubs.filter(item => item.identificador != parametro);
+  this.clubs=result;
+  return result;
+}
+
+
+
 findPrecioFutbolista(parametro) {
   var result = this.futbolistas.filter(item => item.precio >= parametro);
   return result;

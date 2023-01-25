@@ -18,14 +18,14 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 repositorio= new FootballerStats();
 
-city2 = new Club(1,"city","eng","premier",90,500000);
-city3 = new Club(54,"psg","fr","ligue1",91,500000);
+city2 = new Club("1","city","eng","premier",90,500000);
+city3 = new Club("54","psg","fr","ligue1",91,500000);
 usuarioejemplo = new Usuario(1,"Juan José","pass");
 usuarioejemplo2 = new Usuario(2,"Felipe","pass2");
 
 
 neymar=new Futbolista(
-    "A00002",
+    "1",
     "NeymarJr",
     "Brasil",
     88,
@@ -42,7 +42,7 @@ neymar=new Futbolista(
   );
   
   modric =new Futbolista(
-    "A00002",
+    "2",
     "Luka Modric",
     "Croacia",
     88,
@@ -59,7 +59,7 @@ neymar=new Futbolista(
   );
 
   messi =new Futbolista(
-    "A00001",
+    "3",
     "Lionel Andres Messi",
     "Argentina",
     91,
@@ -111,6 +111,32 @@ app.get('/api/futbolistas/valoracion/:valoracion',(req,res)=>{
     res.status(200);
     value=parseInt(req.params.valoracion);
     res.send(repositorio. findValoracionFutbolista(value));
+    
+});
+
+app.delete('/api/futbolistas/borrar/:borrar',(req,res)=>{
+    res.status(200);
+    value=parseInt(req.params.borrar);
+    console.log(value);
+    res.send(repositorio. deleteFutbolista(value));
+    
+});
+
+app.put('/api/clubes/actualizar',(req,res)=> {
+    res.status(200);
+    variable=req.body.id;
+    repositorio. deleteClub(variable);
+    equipo = new Club(req.body.id,req.body.nombre,req.body.pais,req.body.liga,parseInt(req.body.valoracion),parseInt(req.body.precio));
+    repositorio.newClub(equipo);
+    res.send(equipo);
+});
+
+
+app.delete('/api/clubes/borrar/:borrar',(req,res)=>{
+    res.status(200);
+    value=parseInt(req.params.borrar);
+    console.log(value);
+    res.send(repositorio. deleteClub(value));
     
 });
 

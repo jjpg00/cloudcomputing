@@ -33,7 +33,13 @@ Los beneficios más importantes específicamente y el porqué elegí esta herram
 	2. /api/usuarios : Crear usuarios
 	3. /api/jugadores: Crear jugadores 
 	[H08] (https://github.com/jjpg00/cloudcomputing/issues/8)
-	
+
+3. Put rutas
+	1. /api/clubes/actualizar : Actualizar clubes
+
+4. Delete rutas
+	1. /api/futbolistas/borrar/:borrar : Borrar futbolistas
+	2. /api/clubes/borrar/:borrar : Borrar clubes
 	
 Nota: No se ha hecho un post de usuarios porque tiene una cantidad inmensa de parámetros y se ha escogido búsquedas por un atributo determinado así por cual se podía haber cogido cualquier otro. Cumpliendo también [H07] (https://github.com/jjpg00/cloudcomputing/issues/7) (no se ha implementado porque es gigante como se ha comentado).
 Hemos cumplido con toda la funcionalidad que se propuso al principio del proyecto al poder crear usuarios jugadores y clubes y hacer búsquedas atendiendo a lo necesario por el usuario. Además de permitir registrar los usuarios.
